@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+$font-family-sans-serif: 'Roboto', sans-serif;
+$black: #110e18;
+$success : #3FA796;
+$secondary: #273542;
+$danger: #d53232;
+$warning: #d29b3d;
+
+@import "@fortawesome/fontawesome-free/css/all.css";
+@import 'bootstrap/scss/bootstrap';
+
+
+.active{
+    border-bottom: 2px solid green;
+}
+
+
+// for added new btn 
+.crt-btn{
+    width: 60px;
+    height: 60px;
+    bottom: 70px;
+    right: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(23, 74, 48, 0.768) 0px 2px 4px 0px, rgba(49, 206, 90, 0.9) 0px 2px 16px 0px;
+}
+
+#message-text{
+   height: 200px !important;
+}
+
+input::placeholder{
+    color: white;
+}
+
+// for to top btn 
+.to-top{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -100px;
+    top: 50%;
+    transition: 0.5s;
+}
+
+.to-top.show{
+    left: 0;
+}
+
+// for clear all
+#clear-all{
+    cursor: pointer;
+}
+
+
+
+@include media-breakpoint-down(lg) { 
+    .active{
+        border-left: 5px solid green;
+        border-bottom: 0;
+        padding-left: 10px;
+    }
+
+    #message-text{
+        height: 150px !important;
+    }
+
+    .crt-btn{
+        width: 55px;
+        height: 55px;
+        bottom: 50px;
+        right: 50px;
+    }
+ }
+
+ @include media-breakpoint-down(sm) { 
+
+    .header-title{
+        font-size: 25px;
+        margin-top: 20px;
+    }
+    .crt-btn{
+        width: 50px;
+        height: 50px;
+        bottom: 30px;
+        right: 30px;
+    }
+
+    .to-top{
+        width: 25px;
+        height: 25px;
+    }
+ }

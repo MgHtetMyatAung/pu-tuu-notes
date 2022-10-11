@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./public/imgs/notes.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pu Tuu</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="To do Notes">
+    <meta property="og:description" content="You can note and delete and update , and you can search your notes with title name">
+    <meta property="og:image" content="./public/imgs/cover.jpg">
+    
+  </head>
+  <body>
+    
+    <div class="main min-vh-100 bg-black position-relative">
+      <!-- for nav bar  -->
+      <nav class="navbar navbar-expand-lg bg-secondary px-lg-5 fixed-top shadow-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white fs-3 fw-semibold" href="#">Pu Tuu</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars fs-4 text-white"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 py-3 py-lg-0">
+              <li class="nav-item ms-3">
+                <a class="nav-link text-white active" href="#" id="all">All</a>
+              </li>
+              <li class="nav-item ms-3">
+                <a class="nav-link text-white" href="#" id="pending">Pending</a>
+              </li>
+              <li class="nav-item ms-3">
+                <a class="nav-link text-white" href="#" id="complete">Complete</a>
+              </li>
+            </ul>
+            <form class="d-flex mx-2 mx-lg-0 mb-3 mb-lg-0" role="search" id="form">
+              <input class="form-control text-white-50 me-2 bg-secondary" type="search" placeholder="search date or title" aria-label="Search">
+              <button class="btn btn-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- nav end  -->
+
+      <!-- for content body start  -->
+      <div class="container p-md-0">
+        <div class="row mt-5 pt-3 pt-md-5">
+          <div class="col-12">
+            <div class=" mt-md-5">
+              <h2 class=" text-success text-center header-title text-uppercase">You Can Store Your Memories In Here</h2>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="pt-4 d-flex align-items-center justify-content-between">
+              <h4 class="text-warning" id="category">All</h4>
+              <p class="text-danger m-0" id="clear-all">Clear All</p>
+            </div>
+            <hr class="text-warning w-100" style="border: 2px solid;">
+          </div>
+        </div>
+        
+        <div class="row g-4" id="data-row">
+          <!-- <div class="col-md-6 col-lg-4">
+            <div class="bg-dark p-4 rounded">
+              <div class="d-flex align-items-center justify-content-between">
+                <h5 class="note-title text-warning m-0">My Love</h5>
+                <span class="note-date text-success m-0">2/3/2022</span>
+              </div>
+              <div class="">
+                <p class="my-3 text-white-50">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, molestiae. Nam veniam consectetur officia libero officiis quae temporibus dignissimos doloribus sit, vitae facere iure deserunt veritatis! Similique maxime unde voluptatibus!
+                </p>
+              </div>
+              <hr class="border">
+              <div class="d-flex justify-content-between">
+                <button class="btn p-0">
+                  <i class="fa-regular fa-star text-warning fs-5 pe-none"></i>
+                </button>
+                <div class="">
+                  <button class="btn p-0">
+                    <i class="fa-solid fa-pen-to-square text-success pe-none fs-5"></i>
+                  </button>
+                  <button class="btn p-0 ms-3">
+                    <i class="fa-solid fa-trash text-danger pe-none fs-5"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <!-- content body end -->
+
+      <!-- create new btn  -->
+      <button class="btn bg-black position-fixed crt-btn p-3 rounded-circle" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <i class="fa-solid fa-plus pe-none text-light"></i>
+      </button>
+      <button class="btn bg-danger position-fixed to-top">
+        <i class="fa-solid fa-arrow-up pe-none text-light"></i>
+      </button>
+          <!-- to show modal     -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content bg-dark shadow">
+                <div class="modal-header border-0">
+                  <h1 class="modal-title fs-5 text-warning title-show" id="staticBackdropLabel">Added New</h1>
+                  <button class="btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-xmark text-warning"></i>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <span class="text-danger mb-3 for-title d-none">Please enter your title !</span>
+                      <input type="text" class="bg-dark form-control fw-semibold text-light p-3" id="title" placeholder="Title ..." autocomplete="off" required>
+                    </div>
+                    <div class="mb-2">
+                      <span class="text-danger mb-3 for-note d-none">Please enter your notes !</span>
+                      <textarea class="form-control bg-dark text-light p-3" rows="4" id="message-text" placeholder="something write here ..." required></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer border-0">
+                  <button class="btn btn-success text-white" id="added-new">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      <!-- btn end  -->
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
